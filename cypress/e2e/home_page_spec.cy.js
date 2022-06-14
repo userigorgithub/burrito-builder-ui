@@ -5,4 +5,10 @@ describe('Burrito Builder home page', () => {
     cy.visit("http://localhost:3000")
   });
 
+  it('should be able to visit the home page and see title', () => {
+    cy.get("h1")
+      .should("contain", 'Burrito Builder')
+
+  });
+
 });
