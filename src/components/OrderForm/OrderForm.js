@@ -13,13 +13,14 @@ class OrderForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    const newOrder = {
-      id: Date.now(),
-      name: this.state.name,
-      ingredients: this.state.ingredients
+    if (this.state.name && this.state.ingredients.length >= 1) {
+      const newOrder = {
+        id: Date.now(),
+        name: this.state.name,
+        ingredients: this.state.ingredients
+      }
+      this.props.addingNewOrder(newOrder)
     }
-    this.props.addingNewOrder(newOrder)
-
 
     this.clearInputs()
   }
