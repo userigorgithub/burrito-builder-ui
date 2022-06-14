@@ -47,6 +47,23 @@ describe("Burrito Builder home page", () => {
       .should("contain", "steak")
   });
 
+  it('should not be able to submit if ingredient is not filled', () => {
+    cy.get("form")
+    cy.get("input[name='name']")
+      .type("Igor")
+    cy.get('.submit-btn')
+      .click()
+    cy.get("p")
+      .contains("Order: Nothing selected")
+  });
 
-
+  it('should not be able to submit if name is not filled', () => {
+    cy.get("form")
+  cy.get("button[name='steak']")
+    .click()
+    cy.get('.submit-btn')
+      .click()
+    cy.get("p")
+      .contains("Order: Nothing selected")
+  });
 });
