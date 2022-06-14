@@ -15,7 +15,8 @@ class OrderForm extends Component {
     e.preventDefault()
     const newOrder = {
       id: Date.now(),
-      ...this.state
+      name: this.state.name,
+      ingredients: this.state.ingredients
     }
     this.props.addingNewOrder(newOrder)
 
@@ -32,6 +33,7 @@ class OrderForm extends Component {
   }
 
   handleIngredientChange = (event) => {
+    event.preventDefault()
     this.setState({ ingredients: [...this.state.ingredients, event.target.name] })
   }
 
