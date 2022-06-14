@@ -12,8 +12,15 @@ class OrderForm extends Component {
 
 
   handleSubmit = e => {
-    e.preventDefault();
-    this.clearInputs();
+    e.preventDefault()
+    const newOrder = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addingNewOrder(newOrder)
+
+
+    this.clearInputs()
   }
 
   clearInputs = () => {
