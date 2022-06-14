@@ -10,7 +10,6 @@ class OrderForm extends Component {
     };
   }
 
-
   handleSubmit = e => {
     e.preventDefault()
     if (this.state.name && this.state.ingredients.length >= 1) {
@@ -37,7 +36,6 @@ class OrderForm extends Component {
     event.preventDefault()
     this.setState({ ingredients: [...this.state.ingredients, event.target.name] })
   }
-
 
   render() {
     const possibleIngredients = ['beans', 'steak', 'carnitas', 'sofritas', 'lettuce', 'queso fresco', 'pico de gallo', 'hot sauce', 'guacamole', 'jalapenos', 'cilantro', 'sour cream'];

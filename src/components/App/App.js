@@ -23,7 +23,6 @@ class App extends Component {
       .then(data => this.setState({ orders: [...this.state.orders, data] }))
   }
 
-
   render() {
     return (
       <main className="App">
@@ -31,12 +30,10 @@ class App extends Component {
           <h1>Burrito Builder</h1>
           <OrderForm addingNewOrder={this.addOrder}/>
         </header>
-
         <Orders orders={this.state.orders}/>
       </main>
     );
   }
 }
-
 
 export default App;
